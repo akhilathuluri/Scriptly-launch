@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 32 20% 98%;
+    --foreground: 240 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 12%;
+
+    --primary: 255 50% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 15% 92%;
+    --secondary-foreground: 240 10% 12%;
+
+    --muted: 32 15% 94%;
+    --muted-foreground: 32 10% 45%;
+
+    --accent: 32 15% 90%;
+    --accent-foreground: 240 10% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 10% 90%;
+    --input: 32 10% 88%;
+    --ring: 255 50% 45%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --shadow-card: 0 0 0 1px rgba(0,0,0,.03), 0 2px 4px rgba(0,0,0,.02), 0 12px 24px -12px rgba(0,0,0,.08);
+    --shadow-float: 0 20px 50px -12px rgba(0,0,0,0.15);
+    --shadow-hover: 0 0 0 1px rgba(0,0,0,.04), 0 4px 8px rgba(0,0,0,.04), 0 16px 32px -8px rgba(0,0,0,.1);
+    --gradient-text: linear-gradient(180deg, hsl(240 10% 12%) 0%, hsl(32 10% 45%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary) / 0.55) hsl(var(--secondary));
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Theme scrollbar for Chromium browsers */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.82) 0%,
+    hsl(var(--primary) / 0.52) 100%
+  );
+  border: 2px solid hsl(var(--secondary));
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.95) 0%,
+    hsl(var(--primary) / 0.68) 100%
+  );
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor body,
+  html.custom-cursor a,
+  html.custom-cursor button,
+  html.custom-cursor input,
+  html.custom-cursor textarea,
+  html.custom-cursor select,
+  html.custom-cursor summary,
+  html.custom-cursor [role="button"] {
+    cursor: none !important;
+  }
+
+  .custom-cursor-ring,
+  .custom-cursor-dot {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+    will-change: transform, opacity, width, height;
+    transform: translate3d(var(--x, 0px), var(--y, 0px), 0) translate(-50%, -50%);
+    transition: opacity 160ms ease, width 200ms ease, height 200ms ease, border-radius 200ms ease, background-color 200ms ease;
+  }
+
+  .custom-cursor-ring {
+    width: 28px;
+    height: 28px;
+    border-radius: 9999px;
+    border: 1.5px solid hsl(var(--primary) / 0.55);
+    background: hsl(var(--primary) / 0.07);
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.08), 0 8px 30px hsl(var(--primary) / 0.15);
+  }
+
+  .custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.15);
+  }
+
+  html.custom-cursor--visible .custom-cursor-ring,
+  html.custom-cursor--visible .custom-cursor-dot {
+    opacity: 1;
+  }
+
+  html.custom-cursor--interactive .custom-cursor-ring {
+    width: 42px;
+    height: 42px;
+    border-color: hsl(var(--primary) / 0.72);
+    background: hsl(var(--primary) / 0.12);
+  }
+
+  html.custom-cursor--text .custom-cursor-ring {
+    width: 18px;
+    height: 34px;
+    border-radius: 10px;
+    border-color: hsl(var(--primary) / 0.62);
+    background: hsl(var(--primary) / 0.08);
+  }
+
+  html.custom-cursor--pressed .custom-cursor-ring {
+    width: 24px;
+    height: 24px;
+  }
+
+  html.custom-cursor--pressed .custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-surface {
+    @apply bg-white/50 backdrop-blur-md;
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+}
