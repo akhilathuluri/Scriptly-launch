@@ -18,7 +18,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/akhilathuluri/scriptly-app"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
@@ -31,7 +31,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <a
-              href="mailto:hello@scriptly.app"
+              href="mailto:8309889800a@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Contact"
             >

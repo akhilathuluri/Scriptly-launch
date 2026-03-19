@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -25,7 +26,10 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between px-6">
-        <div className="flex items-center gap-3">
+        <Link
+          to="/"
+          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+        >
           <div
             className="h-10 w-10 rounded-xl bg-card shadow-card flex items-center justify-center cursor-pointer overflow-hidden"
             onMouseEnter={() => setLogoHovered(true)}
@@ -59,17 +63,25 @@ const Navbar = () => {
           <span className="text-lg font-semibold tracking-tight text-foreground">
             Scriptly
           </span>
-        </div>
+        </Link>
 
         <div className="flex items-center gap-6">
-          <a
-            href="#faq"
+          <Link
+            to="/faqs"
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
           >
             FAQs
-          </a>
-          <Button variant="nav" size="sm" className="h-9 px-5">
-            Download
+          </Link>
+          <Link
+            to="/issues"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block"
+          >
+            Issues
+          </Link>
+          <Button variant="nav" size="sm" className="h-9 px-5" asChild>
+            <a href="https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe">
+              Download
+            </a>
           </Button>
         </div>
       </div>

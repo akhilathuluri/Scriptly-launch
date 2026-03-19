@@ -96,11 +96,16 @@ type ActionPanelCardProps = {
   onSelectAction: (actionId: string) => void;
 };
 
-const ActionPanelCard = ({ selectedActionId, onSelectAction }: ActionPanelCardProps) => {
+const ActionPanelCard = ({
+  selectedActionId,
+  onSelectAction,
+}: ActionPanelCardProps) => {
   return (
     <div className="w-[280px] md:w-[320px] rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float">
       <div className="flex items-center justify-between mb-3">
-        <span className="text-lg font-semibold tracking-tight text-[#c9c9ea]">Scriptly</span>
+        <span className="text-lg font-semibold tracking-tight text-[#c9c9ea]">
+          Scriptly
+        </span>
         <span className="text-sm text-[#777ab3]">Groq</span>
       </div>
       <div className="flex items-center gap-2 rounded-xl border border-[#2a2f57] bg-[#1b1f3c] px-3 py-2.5 mb-3">
@@ -128,8 +133,12 @@ const ActionPanelCard = ({ selectedActionId, onSelectAction }: ActionPanelCardPr
               <div className="flex items-start gap-2.5 min-w-0">
                 <Icon className="w-4 h-4 mt-0.5 shrink-0 opacity-95" />
                 <div className="min-w-0">
-                  <p className="text-base leading-none font-medium truncate">{item.title}</p>
-                  <p className="text-xs text-[#a5a8d4] mt-1 truncate">{item.subtitle}</p>
+                  <p className="text-base leading-none font-medium truncate">
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-[#a5a8d4] mt-1 truncate">
+                    {item.subtitle}
+                  </p>
                 </div>
               </div>
               <span className="ml-2 w-7 h-7 rounded-md bg-[#232751] text-[#d8dbff] text-xs font-semibold flex items-center justify-center shrink-0">
@@ -139,7 +148,9 @@ const ActionPanelCard = ({ selectedActionId, onSelectAction }: ActionPanelCardPr
           );
         })}
       </div>
-      <p className="mt-2 text-[11px] text-[#7f84bf] text-center">1. navigate - . select - esc close</p>
+      <p className="mt-2 text-[11px] text-[#7f84bf] text-center">
+        1. navigate - . select - esc close
+      </p>
     </div>
   );
 };
@@ -175,13 +186,18 @@ const ResultWindowCard = ({ selectedAction }: ResultWindowCardProps) => {
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2 text-[#cfd2fb]">
           <ActionIcon className="w-4 h-4" />
-          <span className="text-[28px] leading-none">{selectedAction.title}</span>
+          <span className="text-[28px] leading-none">
+            {selectedAction.title}
+          </span>
         </div>
         <X className="w-4 h-4 text-[#7a7fb8]" />
       </div>
 
       <div className="rounded-xl border border-[#2a2f57] bg-[#1b1f3c] px-4 py-4">
-        <p className="text-[#e8eaff] text-sm leading-relaxed" aria-live="polite">
+        <p
+          className="text-[#e8eaff] text-sm leading-relaxed"
+          aria-live="polite"
+        >
           {displayedText}
           {displayedText.length < selectedAction.result.length && (
             <span className="inline-block w-1 h-4 ml-0.5 align-[-2px] bg-[#a8adff] animate-pulse" />
@@ -231,7 +247,8 @@ const ResultWindowCard = ({ selectedAction }: ResultWindowCardProps) => {
 
 const HeroSection = () => {
   const [selectedActionId, setSelectedActionId] = useState(actionItems[0].id);
-  const selectedAction = actionItems.find((item) => item.id === selectedActionId) ?? actionItems[0];
+  const selectedAction =
+    actionItems.find((item) => item.id === selectedActionId) ?? actionItems[0];
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
@@ -246,15 +263,27 @@ const HeroSection = () => {
             AI Text. Anywhere.
           </h1>
           <p className="text-lg md:text-xl leading-relaxed tracking-[-0.01em] text-muted-foreground max-w-xl mx-auto mb-10">
-            Scriptly lives in your menu bar, ready to transform text in any application with a single shortcut. No
-            context switching. Just better writing.
+            Scriptly lives in your menu bar, ready to transform text in any
+            application with a single shortcut. No context switching. Just
+            better writing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="h-12 px-8 text-base">
-              <Download className="w-4 h-4 mr-2" />
-              Download for Windows
+            <Button
+              variant="hero"
+              size="lg"
+              className="h-12 px-8 text-base"
+              asChild
+            >
+              <a href="https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe">
+                <Download className="w-4 h-4 mr-2" />
+                Download for Windows
+              </a>
             </Button>
-            <Button variant="hero-secondary" size="lg" className="h-12 px-8 text-base">
+            <Button
+              variant="hero-secondary"
+              size="lg"
+              className="h-12 px-8 text-base"
+            >
               <Play className="w-4 h-4 mr-2" />
               Watch Demo
             </Button>
@@ -276,7 +305,10 @@ const HeroSection = () => {
               className="rounded-2xl overflow-hidden shadow-float"
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
-              <ActionPanelCard selectedActionId={selectedAction.id} onSelectAction={setSelectedActionId} />
+              <ActionPanelCard
+                selectedActionId={selectedAction.id}
+                onSelectAction={setSelectedActionId}
+              />
             </motion.div>
 
             <motion.div
