@@ -178,6 +178,14 @@
 }
 
 @layer utilities {
+  a {
+    position: relative;
+  }
+
+  a::after {
+    content: none;
+  }
+
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;

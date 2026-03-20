@@ -79,9 +79,7 @@ const Navbar = () => {
             Issues
           </Link>
           <Button variant="nav" size="sm" className="h-9 px-5" asChild>
-            <a href="https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe">
-              Download
-            </a>
+            <Link to="/download-started">Download</Link>
           </Button>
         </div>
       </div>

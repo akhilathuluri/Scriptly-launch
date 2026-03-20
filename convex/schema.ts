@@ -2,6 +2,18 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  app: defineTable({
+    app_id: v.string(),
+    app_name: v.string(),
+    latest_version: v.string(),
+    minimum_version: v.string(),
+    download_url: v.string(),
+    release_notes: v.string(),
+    created_at: v.number(),
+    updated_at: v.number(),
+  })
+    .index("by_app_id", ["app_id"])
+    .index("by_app_name", ["app_name"]),
   issues: defineTable({
     title: v.string(),
     description: v.string(),

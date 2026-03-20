@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   ArrowUpRight,
@@ -274,10 +275,10 @@ const HeroSection = () => {
               className="h-12 px-8 text-base"
               asChild
             >
-              <a href="https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe">
+              <Link to="/download-started">
                 <Download className="w-4 h-4 mr-2" />
                 Download for Windows
-              </a>
+              </Link>
             </Button>
             <Button
               variant="hero-secondary"

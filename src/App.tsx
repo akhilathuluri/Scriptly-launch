@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Issues from "./pages/Issues.tsx";
 import FAQs from "./pages/FAQs.tsx";
+import DownloadStarted from "./pages/DownloadStarted.tsx";
 
 const queryClient = new QueryClient();
 const convex = initConvexClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/issues" element={<Issues />} />
             <Route path="/faqs" element={<FAQs />} />
+            <Route path="/download-started" element={<DownloadStarted />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
