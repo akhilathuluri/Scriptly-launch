@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import RollingText from "@/components/RollingText";
 import {
   ArrowUpRight,
   Copy,
@@ -261,7 +262,11 @@ const HeroSection = () => {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient mb-6">
-            AI Text. Anywhere.
+            <RollingText
+              text="AI Text. Anywhere."
+              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient"
+              charsPerSecond={12}
+            />
           </h1>
           <p className="text-lg md:text-xl leading-relaxed tracking-[-0.01em] text-muted-foreground max-w-xl mx-auto mb-10">
             Scriptly lives in your menu bar, ready to transform text in any
