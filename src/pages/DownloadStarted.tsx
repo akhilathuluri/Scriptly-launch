@@ -11,23 +11,23 @@ const DownloadStarted = () => {
   const steps = [
     {
       title: "Download Started",
-      description: "Your Scriptly installer is downloading...",
+      description: "Your Spark installer is downloading...",
       icon: Download,
-      action: "Downloading Scriptly.exe",
+      action: "Downloading Spark.exe",
       status: "in-progress",
     },
     {
       title: "Locate File",
       description: "Find the downloaded file in your Downloads folder",
       icon: FileText,
-      action: "Look for: Scriptly.exe",
+      action: "Look for: Spark.exe",
       status: "pending",
     },
     {
       title: "Run Installer",
-      description: "Double-click the Scriptly.exe file to start installation",
+      description: "Double-click the Spark.exe file to start installation",
       icon: Zap,
-      action: "Double-click Scriptly.exe",
+      action: "Double-click Spark.exe",
       status: "pending",
     },
   ];
@@ -36,8 +36,8 @@ const DownloadStarted = () => {
     // Trigger the download immediately
     const link = document.createElement("a");
     link.href =
-      "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe";
-    link.download = "Scriptly.exe";
+      "https://github.com/akhilathuluri/Spark-app/releases/download/v1.0/Spark.exe";
+    link.download = "Spark.exe";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -78,7 +78,7 @@ const DownloadStarted = () => {
             Download Started
           </h1>
           <p className="mt-3 text-lg text-muted-foreground">
-            Follow these steps to complete your Scriptly installation
+            Follow these steps to complete your Spark installation
           </p>
         </motion.div>
 
@@ -167,11 +167,11 @@ const DownloadStarted = () => {
             className="rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center"
           >
             <p className="text-sm text-muted-foreground mb-4">
-              Once you find Scriptly.exe in your Downloads folder, click the button below to simulate the installation:
+              Once you find Spark.exe in your Downloads folder, click the button below to simulate the installation:
             </p>
             <Button onClick={handleClickExe} variant="hero" size="lg">
               <FileText className="w-4 h-4 mr-2" />
-              I Found & Clicked Scriptly.exe
+              I Found & Clicked Spark.exe
             </Button>
           </motion.div>
         )}
@@ -188,9 +188,9 @@ const DownloadStarted = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="rounded-lg border border-border bg-card p-6 shadow-float"
             >
-              <h4 className="font-semibold text-foreground mb-4">Scriptly Installer</h4>
+              <h4 className="font-semibold text-foreground mb-4">Spark Installer</h4>
               <p className="text-sm text-muted-foreground mb-6">
-                Continue with installation of Scriptly?
+                Continue with installation of Spark?
               </p>
               <div className="flex gap-3 justify-end">
                 <Button variant="outline" onClick={() => setShowDialog(false)}>
@@ -214,14 +214,14 @@ const DownloadStarted = () => {
             <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-foreground mb-2">Installation Complete!</h3>
             <p className="text-muted-foreground mb-6">
-              Scriptly is now installed and ready to use. Check your Start Menu or press Ctrl+Shift+Space to get started.
+              Spark is now installed and ready to use. Check your Start Menu or press Ctrl+Shift+Space to get started.
             </p>
             <div className="flex gap-3 justify-center">
               <Button asChild variant="outline">
                 <Link to="/">Back to Home</Link>
               </Button>
               <Button variant="hero">
-                Open Scriptly
+                Open Spark
               </Button>
             </div>
           </motion.div>

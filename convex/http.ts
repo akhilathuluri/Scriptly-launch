@@ -29,7 +29,7 @@ const docsHtml = `<!doctype html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scriptly API Docs</title>
+    <title>Spark API Docs</title>
     <style>
       :root {
         color-scheme: light;
@@ -95,7 +95,7 @@ const docsHtml = `<!doctype html>
   <body>
     <main class="container">
       <section class="card">
-        <h1>Scriptly API Docs</h1>
+        <h1>Spark API Docs</h1>
         <p>HTTP actions for app verification and app table discovery.</p>
         <p class="muted">Local development base URL: <code>http://localhost:8080</code> (or your current Vite port)</p>
 
@@ -111,10 +111,10 @@ const docsHtml = `<!doctype html>
         <h2>Verify (POST) Example</h2>
         <pre>curl -X POST "http://localhost:8080/api/verify-app" \\
   -H "Content-Type: application/json" \\
-  -d '{"app_id":"scriptly","app_name":"Scriptly","current_version":"1.0.0"}'</pre>
+  -d '{"app_id":"Spark","app_name":"Spark","current_version":"1.0.0"}'</pre>
 
         <h2>Verify (GET) Example</h2>
-        <pre>http://localhost:8080/api/verify-app?app_id=scriptly&app_name=Scriptly&current_version=1.0.0</pre>
+        <pre>http://localhost:8080/api/verify-app?app_id=Spark&app_name=Spark&current_version=1.0.0</pre>
 
         <h2>Reference</h2>
         <p>See <code>APP_VERIFICATION_API_GUIDE.md</code> for detailed request/response payloads.</p>

@@ -2,7 +2,7 @@
 
 ## ✅ Implementation Complete
 
-A comprehensive, production-ready Issues & Feedback system has been successfully added to Scriptly. The feature is fully modular, follows the existing design system, and uses Convex.dev for real-time database synchronization.
+A comprehensive, production-ready Issues & Feedback system has been successfully added to Spark. The feature is fully modular, follows the existing design system, and uses Convex.dev for real-time database synchronization.
 
 ---
 
@@ -80,7 +80,7 @@ A comprehensive, production-ready Issues & Feedback system has been successfully
 
 ## 🎨 Design & UX Features
 
-✅ **Consistent with Scriptly Design System**
+✅ **Consistent with Spark Design System**
 - Color scheme matches (purple primary, light backgrounds)
 - Space Grotesk font used throughout
 - Glass-morphism cards

@@ -8,7 +8,7 @@ const policySections = [
     title: "Information We Process",
     icon: Database,
     points: [
-      "Scriptly processes selected text only when you trigger an action.",
+      "Spark processes selected text only when you trigger an action.",
       "Basic app diagnostics may be stored to maintain reliability and performance.",
       "We do not collect unrelated files, browser history, or clipboard data outside action runs.",
     ],
@@ -35,7 +35,7 @@ const policySections = [
     title: "Contact",
     icon: Mail,
     points: [
-      "For privacy requests or questions, contact hello@scriptly.app.",
+      "For privacy requests or questions, contact hello@Spark.app.",
       "We review requests and respond within a reasonable timeframe.",
     ],
   },
@@ -60,7 +60,7 @@ const PrivacyPolicy = () => {
               Privacy Policy
             </h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              This policy explains how Scriptly handles data when you use text actions across your desktop workflow.
+              This policy explains how Spark handles data when you use text actions across your desktop workflow.
             </p>
             <p className="mt-2 text-sm text-muted-foreground">Last updated: March 18, 2026</p>
           </div>

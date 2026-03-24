@@ -8,9 +8,9 @@ import {
 
 const faqs = [
   {
-    question: "What is Scriptly?",
+    question: "What is Spark?",
     answer:
-      "Scriptly is a native Windows desktop application that transforms selected text with AI-powered actions. Select text anywhere, press a shortcut, and instantly summarize, rewrite, fix grammar, or run custom actions — without leaving your current app.",
+      "Spark is a native Windows desktop application that transforms selected text with AI-powered actions. Select text anywhere, press a shortcut, and instantly summarize, rewrite, fix grammar, or run custom actions — without leaving your current app.",
   },
   {
     question: "How does it work?",
@@ -20,32 +20,32 @@ const faqs = [
   {
     question: "Which AI providers are supported?",
     answer:
-      "Scriptly supports Groq out of the box, with plans to add more providers. You bring your own API key, which is encrypted locally using Windows DPAPI for maximum security.",
+      "Spark supports Groq out of the box, with plans to add more providers. You bring your own API key, which is encrypted locally using Windows DPAPI for maximum security.",
   },
   {
     question: "Is my data secure?",
     answer:
-      "Yes. API keys are encrypted with Windows DPAPI and stored locally on your machine. Text is sent directly to your chosen AI provider — Scriptly never stores or logs your content on any external server.",
+      "Yes. API keys are encrypted with Windows DPAPI and stored locally on your machine. Text is sent directly to your chosen AI provider — Spark never stores or logs your content on any external server.",
   },
   {
     question: "Can I create custom actions?",
     answer:
-      "Absolutely. In Settings, you can define custom actions with your own prompts. These appear alongside built-in actions in the floating panel, letting you tailor Scriptly to your specific workflow.",
+      "Absolutely. In Settings, you can define custom actions with your own prompts. These appear alongside built-in actions in the floating panel, letting you tailor Spark to your specific workflow.",
   },
   {
     question: "Does it work in every application?",
     answer:
-      "Scriptly works system-wide — any application where you can select text. This includes browsers, code editors, email clients, document processors, terminals, and more.",
+      "Spark works system-wide — any application where you can select text. This includes browsers, code editors, email clients, document processors, terminals, and more.",
   },
   {
-    question: "Is Scriptly free?",
+    question: "Is Spark free?",
     answer:
-      "Scriptly is free to download and use. You provide your own AI provider API key, so you only pay for the AI usage directly through your provider at their standard rates.",
+      "Spark is free to download and use. You provide your own AI provider API key, so you only pay for the AI usage directly through your provider at their standard rates.",
   },
   {
     question: "What are the system requirements?",
     answer:
-      "Scriptly requires Windows 10 or later. It's a lightweight native application that runs in your system tray and uses minimal resources.",
+      "Spark requires Windows 10 or later. It's a lightweight native application that runs in your system tray and uses minimal resources.",
   },
 ];
 
@@ -64,7 +64,7 @@ const FAQSection = () => {
             Questions & Answers
           </h2>
           <p className="text-lg text-muted-foreground">
-            Everything you need to know about Scriptly.
+            Everything you need to know about Spark.
           </p>
         </motion.div>
 

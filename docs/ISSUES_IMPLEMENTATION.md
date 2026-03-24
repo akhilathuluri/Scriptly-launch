@@ -2,7 +2,7 @@
 
 ## ✅ What Was Implemented
 
-A complete, production-ready issues management system with a modular architecture that allows users to report bugs, request features, and provide feedback about Scriptly.
+A complete, production-ready issues management system with a modular architecture that allows users to report bugs, request features, and provide feedback about Spark.
 
 ## 📦 New Files Created
 
@@ -31,7 +31,7 @@ A complete, production-ready issues management system with a modular architectur
 
 ## 🎨 Design & UX
 
-- **Consistent Styling**: Matches existing Scriptly UI/UX perfectly
+- **Consistent Styling**: Matches existing Spark UI/UX perfectly
 - **Custom Cursor**: Works with CustomCursor component
 - **Animations**: Framer Motion entrance and stagger animations
 - **Glass Morphism**: Cards use glass-surface styling
@@ -134,7 +134,7 @@ Access issues page at: `http://localhost:8080/issues`
 ## 📁 File Structure
 
 ```
-scriptly-launch/
+Spark-launch/
 ├── convex/
 │   ├── schema.ts          # Database schema
 │   ├── issues.ts          # Query/mutation functions

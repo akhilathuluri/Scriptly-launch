@@ -1,8 +1,8 @@
-# Scriptly Launch - Comprehensive Codebase Analysis
+# Spark Launch - Comprehensive Codebase Analysis
 
 ## 1. Project Overview
 
-**Project Name:** Scriptly Launch (vite_react_shadcn_ts)  
+**Project Name:** Spark Launch (vite_react_shadcn_ts)  
 **Version:** 0.0.0  
 **Type:** React + TypeScript Landing Page / Marketing Website  
 **Build Tool:** Vite  
@@ -12,7 +12,7 @@
 **Status:** Active Development
 
 ### Purpose
-Scriptly is a **native Windows desktop application** landing page that showcases:
+Spark is a **native Windows desktop application** landing page that showcases:
 - System-wide AI-powered text transformation tool
 - Keyboard shortcut-based AI actions (Explain, Rewrite, Fix Grammar, Summarize, Translate, etc.)
 - Works across all desktop applications without context switching
@@ -91,7 +91,7 @@ Scriptly is a **native Windows desktop application** landing page that showcases
 ## 3. Folder & File Structure
 
 ```
-scriptly-launch/
+Spark-launch/
 ├── public/                          # Static assets
 │   └── robots.txt                   # Search engine crawler instructions
 │
@@ -103,8 +103,8 @@ scriptly-launch/
 │   ├── vite-env.d.ts               # Vite environment type definitions
 │   │
 │   ├── assets/                      # Static images/media
-│   │   ├── scriptly-action-panel.png     # Demo UI screenshot
-│   │   └── scriptly-result-window.png    # Result panel screenshot
+│   │   ├── Spark-action-panel.png     # Demo UI screenshot
+│   │   └── Spark-result-window.png    # Result panel screenshot
 │   │
 │   ├── components/                  # React components
 │   │   ├── CustomCursor.tsx         # Custom cursor implementation
@@ -272,13 +272,13 @@ Index (/)
 #### 5. **FAQSection.tsx** - FAQ Accordion
 - **Type:** Collapsible FAQ using shadcn/ui Accordion
 - **Questions:** 8 FAQs covering:
-  - What is Scriptly?
+  - What is Spark?
   - How does it work?
   - Which AI providers are supported? (Groq)
   - Is my data secure? (Yes - Windows DPAPI encryption)
   - Can I create custom actions?
   - Does it work in every application? (System-wide)
-  - Is Scriptly free?
+  - Is Spark free?
   - System requirements? (Windows 10+)
   
 - **Design:** Glass-surface styling with smooth transitions
@@ -288,7 +288,7 @@ Index (/)
 - **Content:**
   - Logo + App name + Version (v1.0.0)
   - Social links: GitHub icon, Privacy Policy link, Email icon
-  - Copyright notice: "© YEAR Scriptly. System-wide AI text."
+  - Copyright notice: "© YEAR Spark. System-wide AI text."
 - **Responsive:** Flex layout that stacks on mobile
 
 #### 7. **PrivacyPolicy.tsx** - Privacy Policy Page
@@ -615,8 +615,8 @@ npm run test:watch     # Run Vitest in watch mode
 ## 14. Assets & Media
 
 **Static Images:**
-- `scriptly-action-panel.png` - Demo action panel UI
-- `scriptly-result-window.png` - Demo result window UI
+- `Spark-action-panel.png` - Demo action panel UI
+- `Spark-result-window.png` - Demo result window UI
 
 **Icons Library:**
 - Lucide React (462+ icons) - Used throughout components
@@ -696,7 +696,7 @@ className={cn(
 
 ## 18. Product Information
 
-### Scriptly Features (From Codebase)
+### Spark Features (From Codebase)
 - **6 Built-in Actions:**
   1. Explain Code
   2. Rewrite
@@ -735,7 +735,7 @@ Based on codebase markers:
 
 ## 20. Summary
 
-**Scriptly Launch** is a **modern, production-ready landing page** for a Windows desktop AI application. It showcases:
+**Spark Launch** is a **modern, production-ready landing page** for a Windows desktop AI application. It showcases:
 
 ✅ **Modern Tech Stack** - React 18, TypeScript, Vite, Tailwind CSS  
 ✅ **Polished UI** - 40+ shadcn/ui components, smooth animations  

@@ -61,7 +61,7 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
           <span className="text-lg font-semibold tracking-tight text-foreground">
-            Scriptly
+            Spark
           </span>
         </Link>
 

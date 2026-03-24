@@ -48,7 +48,7 @@ const actionItems: ActionItem[] = [
     hotkey: "R",
     icon: RotateCcw,
     result:
-      "Scriptly is a native Windows app that improves selected text with shortcut-based actions. Pick an action, apply the result, and keep writing without switching contexts.",
+      "Spark is a native Windows app that improves selected text with shortcut-based actions. Pick an action, apply the result, and keep writing without switching contexts.",
     resultButtonLabel: "Replace",
   },
   {
@@ -58,7 +58,7 @@ const actionItems: ActionItem[] = [
     hotkey: "G",
     icon: Pencil,
     result:
-      "Scriptly is a native Windows desktop application that transforms selected text with AI-powered actions without interrupting the user's workflow. It works across the operating system, allowing users to trigger actions with a global shortcut and instantly edit or analyze text.",
+      "Spark is a native Windows desktop application that transforms selected text with AI-powered actions without interrupting the user's workflow. It works across the operating system, allowing users to trigger actions with a global shortcut and instantly edit or analyze text.",
     resultButtonLabel: "Replace",
   },
   {
@@ -68,7 +68,7 @@ const actionItems: ActionItem[] = [
     hotkey: "Q",
     icon: MessageCircle,
     result:
-      "Preset answer: Scriptly is useful when you need fast writing assistance in any desktop app. It keeps your context intact by applying actions directly to selected text.",
+      "Preset answer: Spark is useful when you need fast writing assistance in any desktop app. It keeps your context intact by applying actions directly to selected text.",
     resultButtonLabel: "Use Answer",
   },
   {
@@ -78,7 +78,7 @@ const actionItems: ActionItem[] = [
     hotkey: "S",
     icon: List,
     result:
-      "Scriptly is a Windows desktop tool that transforms selected text through shortcut-triggered actions without leaving the current app.",
+      "Spark is a Windows desktop tool that transforms selected text through shortcut-triggered actions without leaving the current app.",
     resultButtonLabel: "Replace",
   },
   {
@@ -88,7 +88,7 @@ const actionItems: ActionItem[] = [
     hotkey: "T",
     icon: Languages,
     result:
-      "Scriptly es una aplicacion de escritorio para Windows que transforma texto seleccionado con acciones rapidas, sin interrumpir el flujo de trabajo del usuario.",
+      "Spark es una aplicacion de escritorio para Windows que transforma texto seleccionado con acciones rapidas, sin interrumpir el flujo de trabajo del usuario.",
     resultButtonLabel: "Use Translation",
   },
 ];
@@ -106,7 +106,7 @@ const ActionPanelCard = ({
     <div className="w-[280px] md:w-[320px] rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float">
       <div className="flex items-center justify-between mb-3">
         <span className="text-lg font-semibold tracking-tight text-[#c9c9ea]">
-          Scriptly
+          Spark
         </span>
         <span className="text-sm text-[#777ab3]">Groq</span>
       </div>
@@ -269,7 +269,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-lg md:text-xl leading-relaxed tracking-[-0.01em] text-muted-foreground max-w-xl mx-auto mb-10">
-            Scriptly lives in your menu bar, ready to transform text in any
+            Spark lives in your menu bar, ready to transform text in any
             application with a single shortcut. No context switching. Just
             better writing.
           </p>

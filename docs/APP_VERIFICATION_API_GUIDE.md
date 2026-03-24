@@ -47,8 +47,8 @@ Example row:
 {
   "_creationTime": 1773952598493.8281,
   "_id": "j573c8jvfzmwjmt6nner1r49kh836vmc",
-  "app_id": "scriptly",
-  "app_name": "Scriptly",
+  "app_id": "Spark",
+  "app_name": "Spark",
   "created_at": 1710000000,
   "download_url": "https://yourapp.com/download",
   "latest_version": "1.0.0",
@@ -93,8 +93,8 @@ GET /api/app-table
     {
       "_id": "j573c8jvfzmwjmt6nner1r49kh836vmc",
       "_creationTime": 1773952598493.8281,
-      "app_id": "scriptly",
-      "app_name": "Scriptly",
+      "app_id": "Spark",
+      "app_name": "Spark",
       "latest_version": "1.0.0",
       "minimum_version": "1.0.0",
       "download_url": "https://yourapp.com/download",
@@ -115,8 +115,8 @@ POST /api/verify-app
 Content-Type: application/json
 
 {
-  "app_id": "scriptly",
-  "app_name": "Scriptly",
+  "app_id": "Spark",
+  "app_name": "Spark",
   "current_version": "1.0.0"
 }
 ```
@@ -124,7 +124,7 @@ Content-Type: application/json
 ### Browser/GET Request
 
 ```http
-GET /api/verify-app?app_id=scriptly&app_name=Scriptly&current_version=1.0.0
+GET /api/verify-app?app_id=Spark&app_name=Spark&current_version=1.0.0
 ```
 
 If you call `/api/verify-app` without query params, it returns `400 invalid_request`.
@@ -139,8 +139,8 @@ If you call `/api/verify-app` without query params, it returns `400 invalid_requ
   "app": {
     "_id": "j573c8jvfzmwjmt6nner1r49kh836vmc",
     "_creationTime": 1773952598493.8281,
-    "app_id": "scriptly",
-    "app_name": "Scriptly",
+    "app_id": "Spark",
+    "app_name": "Spark",
     "latest_version": "1.0.0",
     "minimum_version": "1.0.0",
     "download_url": "https://yourapp.com/download",
@@ -168,7 +168,7 @@ If you call `/api/verify-app` without query params, it returns `400 invalid_requ
   "verified": false,
   "reason": "app_name_mismatch",
   "message": "App name does not match registered app.",
-  "expected_app_name": "Scriptly"
+  "expected_app_name": "Spark"
 }
 ```
 
@@ -205,8 +205,8 @@ If you call `/api/verify-app` without query params, it returns `400 invalid_requ
 curl -X POST "http://localhost:8080/api/verify-app" \
   -H "Content-Type: application/json" \
   -d '{
-    "app_id": "scriptly",
-    "app_name": "Scriptly",
+    "app_id": "Spark",
+    "app_name": "Spark",
     "current_version": "1.0.0"
   }'
 ```
@@ -214,7 +214,7 @@ curl -X POST "http://localhost:8080/api/verify-app" \
 ### Verify app with GET
 
 ```bash
-curl "http://localhost:8080/api/verify-app?app_id=scriptly&app_name=Scriptly&current_version=1.0.0"
+curl "http://localhost:8080/api/verify-app?app_id=Spark&app_name=Spark&current_version=1.0.0"
 ```
 
 ### Get full app table
@@ -255,8 +255,8 @@ export async function verifyBeforeStart() {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      app_id: "scriptly",
-      app_name: "Scriptly",
+      app_id: "Spark",
+      app_name: "Spark",
       current_version: "1.0.0",
     }),
   });

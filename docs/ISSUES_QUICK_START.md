@@ -1,8 +1,8 @@
-# Scriptly Issues Feature - Quick Start Guide
+# Spark Issues Feature - Quick Start Guide
 
 ## 🎉 What's New
 
-A complete, production-ready **Issues & Feedback** page has been added to Scriptly, allowing users to report bugs, request features, and provide feedback. The feature is fully integrated with the existing design system and uses Convex.dev for real-time database synchronization.
+A complete, production-ready **Issues & Feedback** page has been added to Spark, allowing users to report bugs, request features, and provide feedback. The feature is fully integrated with the existing design system and uses Convex.dev for real-time database synchronization.
 
 ## 📍 New Page Location
 
@@ -47,7 +47,7 @@ A complete, production-ready **Issues & Feedback** page has been added to Script
 
 ### Step 2: Create a Project
 1. Click "Create Project"
-2. Give it a name (e.g., "Scriptly")
+2. Give it a name (e.g., "Spark")
 3. Choose your preferred region
 
 ### Step 3: Get Deployment URL
@@ -65,7 +65,7 @@ VITE_CONVEX_URL=https://eager-puma-123.convex.cloud
 ### Step 5: Deploy Backend
 ```bash
 npm install -g convex  # Install Convex CLI globally
-cd e:\scriptly-launch
+cd e:\Spark-launch
 convex auth              # Sign in with your Convex account
 convex deploy            # Deploy schema and functions
 ```
@@ -152,7 +152,7 @@ Output: Single issue
 - **Full width**: Responsive grid layout
 
 ### Colors & Styling
-- Matches existing Scriptly color scheme
+- Matches existing Spark color scheme
 - Purple primary, light backgrounds
 - Glass-morphism cards
 - Space Grotesk font

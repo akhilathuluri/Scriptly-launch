@@ -110,7 +110,7 @@ export const IssueForm = ({ onSuccess }: IssueFormProps) => {
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-foreground mb-2">Report an Issue</h2>
         <p className="text-muted-foreground">
-          Help us improve Scriptly by reporting bugs, suggesting features, or providing feedback.
+          Help us improve Spark by reporting bugs, suggesting features, or providing feedback.
         </p>
       </div>
 

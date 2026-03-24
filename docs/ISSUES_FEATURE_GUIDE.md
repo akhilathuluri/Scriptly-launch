@@ -1,7 +1,7 @@
 # Issues Feature - Modular Implementation Guide
 
 ## Overview
-The Issues feature is implemented as a modular, self-contained system that allows users to report bugs, request features, and provide feedback about Scriptly. It uses Convex.dev for real-time database synchronization.
+The Issues feature is implemented as a modular, self-contained system that allows users to report bugs, request features, and provide feedback about Spark. It uses Convex.dev for real-time database synchronization.
 
 ## Architecture
 

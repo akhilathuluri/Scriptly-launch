@@ -18,7 +18,7 @@ const features = [
   {
     icon: Globe,
     title: "Works Everywhere",
-    description: "Select text in any app. Scriptly handles the rest.",
+    description: "Select text in any app. Spark handles the rest.",
   },
   {
     icon: Brain,

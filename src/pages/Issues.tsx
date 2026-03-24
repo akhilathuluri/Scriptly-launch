@@ -37,7 +37,7 @@ const Issues = () => {
               Issues & Feedback
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Help us improve Scriptly by reporting bugs, requesting features, or providing valuable feedback about your experience.
+              Help us improve Spark by reporting bugs, requesting features, or providing valuable feedback about your experience.
             </p>
           </motion.div>
 

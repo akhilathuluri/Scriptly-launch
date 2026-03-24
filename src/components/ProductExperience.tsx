@@ -9,7 +9,7 @@ const steps = [
     visual: (
       <div className="glass-surface rounded-2xl p-5 max-w-xs text-left">
         <div className="space-y-1.5 text-sm leading-relaxed text-muted-foreground">
-          <p>Scriptly is a native Windows desktop</p>
+          <p>Spark is a native Windows desktop</p>
           <p>
             <span className="bg-primary/15 text-primary ring-2 ring-primary/30 ring-offset-1 rounded px-0.5">
               application that transforms selected

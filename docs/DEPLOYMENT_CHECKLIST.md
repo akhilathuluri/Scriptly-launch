@@ -5,7 +5,7 @@
 ### Step 1: Convex Account & Project Setup (5 minutes)
 - [ ] Visit https://www.convex.dev
 - [ ] Sign up (GitHub recommended)
-- [ ] Create new project (name: "Scriptly" or similar)
+- [ ] Create new project (name: "Spark" or similar)
 - [ ] Copy deployment URL (e.g., `https://eager-puma-123.convex.cloud`)
 - [ ] Keep this URL for later steps
 
@@ -15,7 +15,7 @@
 - [ ] Verify: `convex --version`
 
 ### Step 3: Authentication (2 minutes)
-- [ ] Navigate to project dir: `cd e:\scriptly-launch`
+- [ ] Navigate to project dir: `cd e:\Spark-launch`
 - [ ] Run: `convex auth`
 - [ ] Select account in browser dialog
 - [ ] Confirm authentication

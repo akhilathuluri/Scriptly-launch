@@ -11,14 +11,14 @@ const Footer = () => {
               <span className="text-sm font-bold text-primary">S</span>
             </div>
             <span className="text-sm font-medium text-foreground">
-              Scriptly
+              Spark
             </span>
             <span className="text-xs text-muted-foreground">v1.0.0</span>
           </div>
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com/akhilathuluri/scriptly-app"
+              href="https://github.com/akhilathuluri/Spark-app"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
 
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Scriptly. System-wide AI text.
+            © {new Date().getFullYear()} Spark. System-wide AI text.
           </p>
         </div>
       </div>
