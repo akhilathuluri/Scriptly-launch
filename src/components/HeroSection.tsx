@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import RollingText from "@/components/RollingText";
+import TextSelectionDataCard from "@/components/TextSelectionDataCard";
 import {
   ArrowUpRight,
   Copy,
@@ -28,6 +29,7 @@ type ActionItem = {
   icon: LucideIcon;
   result: string;
   resultButtonLabel: string;
+  codeExample: string;
 };
 
 const actionItems: ActionItem[] = [
@@ -37,8 +39,31 @@ const actionItems: ActionItem[] = [
     subtitle: "Explain what this code does",
     hotkey: "C",
     icon: Monitor,
+    codeExample: `const [products, setProducts] = useState([]);
+
+useEffect(() => {
+  let isMounted = true;
+
+  const loadProducts = async () => {
+    try {
+      const response = await fetch('/api/products');
+      const data = await response.json();
+      if (isMounted) {
+        setProducts(data.items ?? []);
+      }
+    } catch (error) {
+      console.error('Failed to load products', error);
+    }
+  };
+
+  loadProducts();
+
+  return () => {
+    isMounted = false;
+  };
+}, []);`,
     result:
-      "This function groups text actions in one keyboard-first panel. Each action points to a predefined output, so selecting an item immediately updates the result window without calling external services.",
+      "This React code fetches product data when the component first loads. It calls /api/products, converts the response to JSON, and stores the returned items in component state using setProducts. The isMounted flag prevents state updates after unmount, avoiding memory-leak style warnings. If the request fails, it logs an error instead of crashing the UI.",
     resultButtonLabel: "Apply",
   },
   {
@@ -47,8 +72,18 @@ const actionItems: ActionItem[] = [
     subtitle: "Rewrite in a cleaner, clearer way",
     hotkey: "R",
     icon: RotateCcw,
-    result:
-      "Spark is a native Windows app that improves selected text with shortcut-based actions. Pick an action, apply the result, and keep writing without switching contexts.",
+    codeExample: `Hey team,
+
+we need this done asap. i checked the api but it still giving error and client is waiting from morning. can someone fix this today and update me once done because i have call at 5.
+
+thanks`,
+    result: `Hi team,
+
+We need to resolve this as soon as possible. I checked the API, and it is still returning an error. The client has been waiting since this morning.
+
+Can someone please fix this today and share an update once it's done? I have a client call at 5:00 PM.
+
+Thanks,`,
     resultButtonLabel: "Replace",
   },
   {
@@ -57,8 +92,8 @@ const actionItems: ActionItem[] = [
     subtitle: "Fix spelling and grammar mistakes",
     hotkey: "G",
     icon: Pencil,
-    result:
-      "Spark is a native Windows desktop application that transforms selected text with AI-powered actions without interrupting the user's workflow. It works across the operating system, allowing users to trigger actions with a global shortcut and instantly edit or analyze text.",
+    codeExample: `The dashboard dont load properly on mobile and users was reporting that the checkout buttons are missing. We needs to fix it quick before tonight deployment.`,
+    result: `The dashboard doesn't load properly on mobile, and users have reported that the checkout buttons are missing. We need to fix this quickly before tonight's deployment.`,
     resultButtonLabel: "Replace",
   },
   {
@@ -67,8 +102,8 @@ const actionItems: ActionItem[] = [
     subtitle: "Ask anything - type your own question",
     hotkey: "Q",
     icon: MessageCircle,
-    result:
-      "Preset answer: Spark is useful when you need fast writing assistance in any desktop app. It keeps your context intact by applying actions directly to selected text.",
+    codeExample: `How do I optimize a React component?`,
+    result: `Use React.memo() to prevent unnecessary re-renders, optimize state with useCallback and useMemo, lazy load components with React.lazy(), and use keys properly in lists. Profile with DevTools to identify bottlenecks.`,
     resultButtonLabel: "Use Answer",
   },
   {
@@ -77,8 +112,8 @@ const actionItems: ActionItem[] = [
     subtitle: "Create a concise summary",
     hotkey: "S",
     icon: List,
-    result:
-      "Spark is a Windows desktop tool that transforms selected text through shortcut-triggered actions without leaving the current app.",
+    codeExample: `The quick brown fox jumps over the lazy dog. This sentence contains every letter of the English alphabet. It is often used in typography and typesetting to test how fonts look when all characters are displayed.`,
+    result: `A pangram featuring all English alphabet letters, commonly used in typography testing.`,
     resultButtonLabel: "Replace",
   },
   {
@@ -87,8 +122,8 @@ const actionItems: ActionItem[] = [
     subtitle: "Translate to English or detect language",
     hotkey: "T",
     icon: Languages,
-    result:
-      "Spark es una aplicacion de escritorio para Windows que transforma texto seleccionado con acciones rapidas, sin interrumpir el flujo de trabajo del usuario.",
+    codeExample: `Bonjour, comment allez-vous?`,
+    result: `Hello, how are you?`,
     resultButtonLabel: "Use Translation",
   },
 ];
@@ -296,9 +331,9 @@ const HeroSection = () => {
           </div>
         </motion.div>
 
-        <div className="relative mt-20 md:mt-28 max-w-4xl mx-auto">
+        <div className="relative mt-20 md:mt-28 max-w-6xl mx-auto">
           <motion.div
-            className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8"
+            className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-6 md:gap-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -307,6 +342,25 @@ const HeroSection = () => {
               ease: [0.4, 0, 0.2, 1],
             }}
           >
+            {/* Text Selection Card (Left) - Shows action code examples */}
+            <motion.div
+              className="rounded-2xl overflow-hidden shadow-float"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+            >
+              <TextSelectionDataCard
+                selectedText={selectedAction.codeExample}
+                actionTitle={selectedAction.title}
+              />
+            </motion.div>
+
+            {/* Action Panel Card (Center) */}
             <motion.div
               className="rounded-2xl overflow-hidden shadow-float"
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
@@ -317,6 +371,7 @@ const HeroSection = () => {
               />
             </motion.div>
 
+            {/* Result Window Card (Right) */}
             <motion.div
               className="rounded-2xl overflow-hidden shadow-float"
               initial={{ y: 20 }}

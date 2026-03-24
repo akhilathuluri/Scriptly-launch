@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import sparkLogo from "@/assets/spark-logo.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -47,16 +48,16 @@ const Navbar = () => {
                   <ArrowLeft className="w-5 h-5 text-foreground" />
                 </motion.div>
               ) : (
-                <motion.span
+                <motion.img
                   key="logo"
-                  className="text-lg font-bold text-primary"
+                  src={sparkLogo}
+                  alt="Spark logo"
+                  className="w-6 h-6"
                   initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
                   animate={{ opacity: 1, rotate: 0, scale: 1 }}
                   exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
                   transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-                >
-                  S
-                </motion.span>
+                />
               )}
             </AnimatePresence>
           </div>
