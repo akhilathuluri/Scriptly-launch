@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { IssueForm, IssuesList } from "@/components/Issues";
+import SEO from "@/components/SEO";
 
 const Issues = () => {
   const [refreshTrigger, setRefreshTrigger] = useState(0);
@@ -14,6 +15,11 @@ const Issues = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Spark Issues and Feedback"
+        description="Report bugs, request features, and share feedback to help improve Spark, the native Windows AI text assistant."
+        path="/issues"
+      />
       <Navbar />
 
       <main className="relative pt-28 md:pt-36 pb-24 md:pb-32 overflow-hidden">

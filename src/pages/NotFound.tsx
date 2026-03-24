@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Home, MessageCircleQuestion, ShieldCheck } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -14,6 +15,12 @@ const NotFound = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background px-6 py-14">
+      <SEO
+        title="Page Not Found | Spark"
+        description="The page you are looking for does not exist on Spark."
+        path={location.pathname}
+        noindex
+      />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute -right-20 bottom-12 h-72 w-72 rounded-full bg-amber-200/45 blur-3xl" />

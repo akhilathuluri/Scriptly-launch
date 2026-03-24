@@ -324,9 +324,12 @@ const HeroSection = () => {
               variant="hero-secondary"
               size="lg"
               className="h-12 px-8 text-base"
+              asChild
             >
-              <Play className="w-4 h-4 mr-2" />
-              Watch Demo
+              <Link to="/watch-videos">
+                <Play className="w-4 h-4 mr-2" />
+                Watch Demo
+              </Link>
             </Button>
           </div>
         </motion.div>

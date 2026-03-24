@@ -1,6 +1,9 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import {
+  MessageSquareText,
+  WandSparkles,
+  ShieldCheck,
   Zap,
   Globe,
   Brain,
@@ -33,12 +36,30 @@ const features = [
   {
     icon: Replace,
     title: "In-place Replace",
-    description: "Results replace your original text — no copy-paste needed.",
+    description: "Results replace your original text - no copy-paste needed.",
   },
   {
     icon: Gauge,
-    title: "Lightning Fast",
+    title: "Lightning Fast Native App",
     description: "Native Windows app. No browser. No lag.",
+  },
+  {
+    icon: MessageSquareText,
+    title: "Chat with AI",
+    description:
+      "Have direct conversations with AI in a popup window. Multi-turn conversations with streaming responses.",
+  },
+  {
+    icon: WandSparkles,
+    title: "Prompt Enhancement",
+    description:
+      "One-click AI-powered prompt improver. Turn simple instructions into better-structured prompts for optimal results.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Private & Local",
+    description:
+      "Your data stays on your Windows. API calls go directly to providers. No Spark servers in between.",
   },
 ];
 
@@ -88,7 +109,7 @@ const FeatureCard = ({
   index: number;
 }) => {
   const Icon = feature.icon;
-  const isNativeApp = feature.title === "Lightning Fast";
+  const isNativeApp = feature.title === "Lightning Fast Native App";
 
   return (
     <motion.div

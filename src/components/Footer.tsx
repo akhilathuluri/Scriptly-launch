@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="border-t border-border py-12">
-      <div className="container max-w-7xl mx-auto px-6">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -16,7 +16,7 @@ const Footer = () => {
             <span className="text-xs text-muted-foreground">v1.0.0</span>
           </div>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6">
             <a
               href="https://github.com/akhilathuluri/Spark-app"
               className="text-muted-foreground hover:text-foreground transition-colors"

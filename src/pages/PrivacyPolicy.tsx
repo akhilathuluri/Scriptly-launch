@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ShieldCheck, Lock, Database, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const policySections = [
   {
@@ -44,6 +45,11 @@ const policySections = [
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEO
+        title="Spark Privacy Policy"
+        description="Read the Spark privacy policy to understand data handling, security, and user privacy for the Spark Windows AI text assistant."
+        path="/privacy-policy"
+      />
       <Navbar />
 
       <main className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
