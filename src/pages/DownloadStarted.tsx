@@ -39,9 +39,9 @@ const detectArchitecture = (): Architecture => {
 
 const DownloadStarted = () => {
   const x64DownloadUrl =
-    "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe";
+    "https://github.com/akhilathuluri/spark-app/releases/download/v1/SparkInstaller-win-x64.exe";
   const arm64DownloadUrl =
-    "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe";
+    "https://github.com/akhilathuluri/spark-app/releases/download/v1/SparkInstaller-win-arm64.exe";
   const detectedArchitecture = detectArchitecture();
 
   const isX64Recommended = detectedArchitecture === "x64";

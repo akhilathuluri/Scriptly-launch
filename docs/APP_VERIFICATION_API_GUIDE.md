@@ -39,6 +39,18 @@ So these requests work exactly as requested:
 
 No Convex domain is needed in your client code while running locally.
 
+## Production (Vercel) Behavior
+
+In production, Vercel serves a catch-all API function at `api/[...path].js` that forwards `/api/*` requests to your Convex HTTP API.
+
+Required Vercel environment variable:
+
+- `CONVEX_SITE_URL=https://<your-convex-deployment>.convex.site`
+
+Example:
+
+- `https://usespark.vercel.app/api/health` forwards to `https://<your-convex-deployment>.convex.site/api/health`
+
 ## Data Model
 
 Table name: `app`

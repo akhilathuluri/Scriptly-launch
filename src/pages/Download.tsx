@@ -13,7 +13,7 @@ const downloadSchema = {
   operatingSystem: "Windows",
   applicationCategory: "ProductivityApplication",
   downloadUrl:
-    "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe",
+    "https://github.com/akhilathuluri/spark-app/releases/download/v1/SparkInstaller-win-x64.exe",
   description:
     "Download Spark for Windows and transform text instantly with AI actions like rewrite, grammar fix, summarize, and translate.",
 };

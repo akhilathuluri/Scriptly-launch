@@ -29,7 +29,7 @@ const homeSchema = [
     applicationCategory: "ProductivityApplication",
     operatingSystem: "Windows",
     downloadUrl:
-      "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe",
+      "https://github.com/akhilathuluri/spark-app/releases/download/v1/SparkInstaller-win-x64.exe",
     description:
       "Spark is a native Windows app that rewrites, fixes grammar, translates, summarizes, and transforms selected text instantly.",
   },
