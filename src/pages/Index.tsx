@@ -20,7 +20,7 @@ const homeSchema = [
     name: "Spark",
     url: "https://usespark.vercel.app/",
     logo: "https://usespark.vercel.app/favicon.ico",
-    sameAs: ["https://github.com/akhilathuluri/Spark-app"],
+    sameAs: ["https://github.com/akhilathuluri/"],
   },
   {
     "@context": "https://schema.org",
@@ -29,7 +29,7 @@ const homeSchema = [
     applicationCategory: "ProductivityApplication",
     operatingSystem: "Windows",
     downloadUrl:
-      "https://github.com/akhilathuluri/Spark-app/releases/download/v1.0/Spark.exe",
+      "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe",
     description:
       "Spark is a native Windows app that rewrites, fixes grammar, translates, summarizes, and transforms selected text instantly.",
   },

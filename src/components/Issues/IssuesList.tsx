@@ -107,7 +107,7 @@ export const IssuesList = ({ refreshTrigger }: IssuesListProps) => {
           className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
           {issues.map((issue, index) => (
-            <IssueCard key={issue._id} issue={issue as Issue} index={index} />
+            <IssueCard key={issue._id} issue={{ ...issue, email: "" } as Issue} index={index} />
           ))}
         </motion.div>
       )}

@@ -115,11 +115,8 @@ export const IssueCard = ({ issue, index }: IssueCardProps) => {
       </div>
 
       {/* Footer: Email and Time */}
-      <div className="flex items-center justify-between text-xs text-muted-foreground">
-        <span className="truncate">{issue.email}</span>
-        <span className="shrink-0 ml-2">
-          {formatDistanceToNow(created, { addSuffix: true })}
-        </span>
+      <div className="flex items-center justify-end text-xs text-muted-foreground">
+        <span>{formatDistanceToNow(created, { addSuffix: true })}</span>
       </div>
     </motion.div>
   );

@@ -12,6 +12,7 @@ The following HTTP endpoints are now available in Convex via `convex/http.ts`:
 
 - `GET /api/health`
 - `GET /api/app-table`
+- `GET /api/developer-notifications`
 - `POST /api/verify-app`
 - `GET /api/verify-app` (query-string based, browser-friendly)
 
@@ -33,6 +34,7 @@ So these requests work exactly as requested:
 
 - `http://localhost:8080/api/health`
 - `http://localhost:8080/api/app-table`
+- `http://localhost:8080/api/developer-notifications`
 - `http://localhost:8080/api/verify-app`
 
 No Convex domain is needed in your client code while running locally.
@@ -129,6 +131,38 @@ GET /api/verify-app?app_id=Spark&app_name=Spark&current_version=1.0.0
 
 If you call `/api/verify-app` without query params, it returns `400 invalid_request`.
 
+## Endpoint 4: Developer Notifications
+
+### Request
+
+```http
+GET /api/developer-notifications
+```
+
+Optional query parameter:
+
+- `include_inactive=true` to return active + inactive notifications.
+
+### Response
+
+```json
+{
+  "count": 2,
+  "data": [
+    {
+      "_id": "...",
+      "title": "Maintenance Window",
+      "message": "Scheduled maintenance on Friday 10:00 PM UTC.",
+      "type": "warning",
+      "priority": "high",
+      "isActive": true,
+      "createdAt": 1710000000,
+      "updatedAt": 1710000000
+    }
+  ]
+}
+```
+
 ### Success Response (`200`)
 
 ```json
@@ -221,6 +255,18 @@ curl "http://localhost:8080/api/verify-app?app_id=Spark&app_name=Spark&current_v
 
 ```bash
 curl "http://localhost:8080/api/app-table"
+```
+
+### Get developer notifications
+
+```bash
+curl "http://localhost:8080/api/developer-notifications"
+```
+
+### Get all notifications including inactive
+
+```bash
+curl "http://localhost:8080/api/developer-notifications?include_inactive=true"
 ```
 
 ## Client Integration (Reject on Fail)

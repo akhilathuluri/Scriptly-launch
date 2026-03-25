@@ -40,4 +40,24 @@ export default defineSchema({
     createdAt: v.number(),
     updatedAt: v.number(),
   }).index("by_status", ["status"]),
+  developerNotifications: defineTable({
+    title: v.string(),
+    message: v.string(),
+    type: v.union(
+      v.literal("info"),
+      v.literal("success"),
+      v.literal("warning"),
+      v.literal("update")
+    ),
+    priority: v.union(v.literal("low"), v.literal("medium"), v.literal("high")),
+    isActive: v.boolean(),
+    ctaLabel: v.optional(v.string()),
+    ctaUrl: v.optional(v.string()),
+    startsAt: v.optional(v.number()),
+    expiresAt: v.optional(v.number()),
+    createdAt: v.number(),
+    updatedAt: v.number(),
+  })
+    .index("by_isActive", ["isActive"])
+    .index("by_priority", ["priority"]),
 });

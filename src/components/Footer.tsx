@@ -18,7 +18,7 @@ const Footer = () => {
 
           <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6">
             <a
-              href="https://github.com/akhilathuluri/Spark-app"
+              href="https://github.com/akhilathuluri/"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >

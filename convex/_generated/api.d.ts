@@ -9,6 +9,7 @@
  */
 
 import type * as app from "../app.js";
+import type * as developerNotifications from "../developerNotifications.js";
 import type * as http from "../http.js";
 import type * as issues from "../issues.js";
 
@@ -20,6 +21,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   app: typeof app;
+  developerNotifications: typeof developerNotifications;
   http: typeof http;
   issues: typeof issues;
 }>;

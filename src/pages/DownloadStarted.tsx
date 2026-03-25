@@ -39,13 +39,17 @@ const detectArchitecture = (): Architecture => {
 
 const DownloadStarted = () => {
   const x64DownloadUrl =
-    "https://github.com/akhilathuluri/Spark-app/releases/download/v1.0/Spark.exe";
+    "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe";
   const arm64DownloadUrl =
-    "https://github.com/akhilathuluri/Spark-app/releases/latest";
+    "https://github.com/akhilathuluri/scriptly-app/releases/download/v1.0/Scriptly.exe";
   const detectedArchitecture = detectArchitecture();
 
   const isX64Recommended = detectedArchitecture === "x64";
   const isArm64Recommended = detectedArchitecture === "arm64";
+
+  const openDownload = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-background px-6 py-16">
@@ -96,27 +100,23 @@ const DownloadStarted = () => {
 
           <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <Button
-              asChild
               variant={isX64Recommended ? "hero" : "outline"}
               size="lg"
               className={`h-12 ${isX64Recommended ? "ring-2 ring-primary/50" : ""}`}
+              onClick={() => openDownload(x64DownloadUrl)}
             >
-              <a href={x64DownloadUrl} target="_blank" rel="noreferrer">
-                <Download className="mr-2 h-4 w-4" />
-                Download x64
-              </a>
+              <Download className="mr-2 h-4 w-4" />
+              Download x64
             </Button>
 
             <Button
-              asChild
               variant={isArm64Recommended ? "hero" : "outline"}
               size="lg"
               className={`h-12 ${isArm64Recommended ? "ring-2 ring-primary/50" : ""}`}
+              onClick={() => openDownload(arm64DownloadUrl)}
             >
-              <a href={arm64DownloadUrl} target="_blank" rel="noreferrer">
-                <Laptop className="mr-2 h-4 w-4" />
-                Download ARM64
-              </a>
+              <Laptop className="mr-2 h-4 w-4" />
+              Download ARM64
             </Button>
 
             <Button variant="secondary" size="lg" className="h-12" disabled>

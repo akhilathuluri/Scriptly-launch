@@ -103,10 +103,16 @@ const docsHtml = `<!doctype html>
         <ul>
           <li><code>GET /api/health</code> - Health status.</li>
           <li><code>GET /api/app-table</code> - Returns entire <code>app</code> table.</li>
+          <li><code>GET /api/developer-notifications</code> - Returns active developer notifications.</li>
           <li><code>POST /api/verify-app</code> - Verify app identity and version.</li>
           <li><code>GET /api/verify-app?app_id=...&current_version=...&app_name=...</code> - Browser-friendly verification.</li>
           <li><code>GET /api/docs</code> - This page.</li>
         </ul>
+
+        <h2>Developer Notifications Example</h2>
+        <pre>http://localhost:8080/api/developer-notifications</pre>
+
+        <p class="muted">Optional query: <code>?include_inactive=true</code> to include inactive rows.</p>
 
         <h2>Verify (POST) Example</h2>
         <pre>curl -X POST "http://localhost:8080/api/verify-app" \\
@@ -169,6 +175,33 @@ http.route({
 
 http.route({
   path: "/api/app-table",
+  method: "OPTIONS",
+  handler: httpAction(async () => noContent()),
+});
+
+// Returns developer notifications from Convex table.
+http.route({
+  path: "/api/developer-notifications",
+  method: "GET",
+  handler: httpAction(async (ctx, request) => {
+    const url = new URL(request.url);
+    const includeInactive =
+      (url.searchParams.get("include_inactive") ?? "").toLowerCase() === "true";
+
+    const data = await ctx.runQuery(
+      (api as any).developerNotifications.listDeveloperNotifications,
+      { includeInactive }
+    );
+
+    return json({
+      count: data.length,
+      data,
+    });
+  }),
+});
+
+http.route({
+  path: "/api/developer-notifications",
   method: "OPTIONS",
   handler: httpAction(async () => noContent()),
 });
