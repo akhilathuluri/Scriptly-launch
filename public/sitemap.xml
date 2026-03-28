@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://usespark.vercel.app/</loc>
+    <loc>https://spark-app.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/faqs</loc>
+    <loc>https://spark-app.in/faqs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/download</loc>
+    <loc>https://spark-app.in/download</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/why</loc>
+    <loc>https://spark-app.in/why</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/watch-videos</loc>
+    <loc>https://spark-app.in/watch-videos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/privacy-policy</loc>
+    <loc>https://spark-app.in/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://usespark.vercel.app/issues</loc>
+    <loc>https://spark-app.in/issues</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

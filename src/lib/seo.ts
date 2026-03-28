@@ -25,5 +25,5 @@ export const getSiteUrl = () => {
     return envUrl.replace(/\/$/, "");
   }
 
-  return "https://usespark.vercel.app/";
+  return "https://spark-app.in/";
 };

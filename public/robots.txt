@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://usespark.vercel.app/sitemap.xml
+Sitemap: https://spark-app.in/sitemap.xml

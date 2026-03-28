@@ -49,7 +49,7 @@ Required Vercel environment variable:
 
 Example:
 
-- `https://usespark.vercel.app/api/health` forwards to `https://<your-convex-deployment>.convex.site/api/health`
+- `https://spark-app.in/api/health` forwards to `https://<your-convex-deployment>.convex.site/api/health`
 
 ## Data Model
 
