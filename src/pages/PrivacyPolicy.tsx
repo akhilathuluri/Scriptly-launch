@@ -36,7 +36,7 @@ const policySections = [
     title: "Contact",
     icon: Mail,
     points: [
-      "For privacy requests or questions, contact hello@Spark.app.",
+      "For privacy requests or questions, contact akhil.builds@proton.me.",
       "We review requests and respond within a reasonable timeframe.",
     ],
   },
