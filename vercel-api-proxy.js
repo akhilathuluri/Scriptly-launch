@@ -8,6 +8,7 @@ const HOP_BY_HOP_HEADERS = new Set([
   "transfer-encoding",
   "upgrade",
   "content-length",
+  "content-encoding",
   "host",
 ]);
 
@@ -114,9 +115,12 @@ export async function proxyToConvex(req, res, options) {
       redirect: "manual",
     });
 
+    const responseBody = await upstreamResponse.arrayBuffer();
+    const responseBuffer = Buffer.from(responseBody);
+
     copyResponseHeaders(upstreamResponse, res);
-    const responseText = await upstreamResponse.text();
-    res.status(upstreamResponse.status).send(responseText);
+    res.setHeader("content-length", String(responseBuffer.length));
+    res.status(upstreamResponse.status).send(responseBuffer);
   } catch (error) {
     res.status(502).json({
       ok: false,
