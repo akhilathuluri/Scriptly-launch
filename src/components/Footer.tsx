@@ -31,7 +31,7 @@ const Footer = () => {
               Privacy Policy
             </Link>
             <a
-              href="mailto:8309889800a@gmail.com"
+              href="mailto:akhil.builds@proton.me"
               className="text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Contact"
             >
@@ -42,6 +42,40 @@ const Footer = () => {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Spark. System-wide AI text.
           </p>
+        </div>
+
+        {/* Secondary footer row */}
+        <div className="mt-6 pt-5 border-t border-border/50 flex items-center justify-center flex-wrap gap-x-6 gap-y-2">
+          <Link
+            to="/terms"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Terms of Service
+          </Link>
+          <Link
+            to="/changelog"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Changelog
+          </Link>
+          <Link
+            to="/why"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Why Spark?
+          </Link>
+          <Link
+            to="/faqs"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            FAQs
+          </Link>
+          <Link
+            to="/uninstall"
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Uninstall
+          </Link>
         </div>
       </div>
     </footer>

@@ -16,6 +16,9 @@ import Download from "./pages/Download.tsx";
 import DownloadStarted from "./pages/DownloadStarted.tsx";
 import Why from "./pages/Why.tsx";
 import WatchVideos from "./pages/WatchVideos.tsx";
+import Uninstall from "./pages/Uninstall.tsx";
+import Terms from "./pages/Terms.tsx";
+import Changelog from "./pages/Changelog.tsx";
 
 const queryClient = new QueryClient();
 const convex = initConvexClient();
@@ -38,6 +41,9 @@ const App = () => (
               <Route path="/watch-videos" element={<WatchVideos />} />
               <Route path="/download" element={<Download />} />
               <Route path="/download-started" element={<DownloadStarted />} />
+              <Route path="/uninstall" element={<Uninstall />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/changelog" element={<Changelog />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
