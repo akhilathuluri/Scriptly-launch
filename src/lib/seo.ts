@@ -25,5 +25,5 @@ export const getSiteUrl = () => {
     return envUrl.replace(/\/$/, "");
   }
 
-  return "https://spark-app.in/";
+  return "https://www.spark-app.in/";
 };

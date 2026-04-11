@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://spark-app.in/sitemap.xml
+Sitemap: https://www.spark-app.in/sitemap.xml
