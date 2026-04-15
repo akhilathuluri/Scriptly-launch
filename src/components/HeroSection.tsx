@@ -32,6 +32,12 @@ type ActionItem = {
   codeExample: string;
 };
 
+const PANEL_CARD_BASE_CLASSES =
+  "w-full rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float";
+
+const PREVIEW_CARD_WRAPPER_CLASSES = "w-full max-w-[320px]";
+const RESULT_CARD_WRAPPER_CLASSES = "w-full max-w-[340px]";
+
 const actionItems: ActionItem[] = [
   {
     id: "explain-code",
@@ -138,7 +144,7 @@ const ActionPanelCard = ({
   onSelectAction,
 }: ActionPanelCardProps) => {
   return (
-    <div className="w-[280px] md:w-[320px] rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float">
+    <div className={PANEL_CARD_BASE_CLASSES}>
       <div className="flex items-center justify-between mb-3">
         <span className="text-lg font-semibold tracking-tight text-[#c9c9ea]">
           Spark
@@ -219,7 +225,7 @@ const ResultWindowCard = ({ selectedAction }: ResultWindowCardProps) => {
   }, [selectedAction.id, selectedAction.result]);
 
   return (
-    <div className="w-[280px] md:w-[340px] rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float">
+    <div className={PANEL_CARD_BASE_CLASSES}>
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2 text-[#cfd2fb]">
           <ActionIcon className="w-4 h-4" />
@@ -289,17 +295,17 @@ const HeroSection = () => {
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-      <div className="container max-w-7xl mx-auto px-6 text-center">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 text-center">
         <motion.div
           className="max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 12, scale: 0.99 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient mb-6">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient mb-6">
             <RollingText
               text="AI Text. Anywhere."
-              className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient"
+              className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.04em] leading-[1.1] text-gradient"
               charsPerSecond={12}
             />
           </h1>
@@ -347,7 +353,7 @@ const HeroSection = () => {
           >
             {/* Text Selection Card (Left) - Shows action code examples */}
             <motion.div
-              className="rounded-2xl overflow-hidden shadow-float"
+              className={`${PREVIEW_CARD_WRAPPER_CLASSES} rounded-2xl overflow-hidden shadow-float`}
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -365,7 +371,7 @@ const HeroSection = () => {
 
             {/* Action Panel Card (Center) */}
             <motion.div
-              className="rounded-2xl overflow-hidden shadow-float"
+              className={`${PREVIEW_CARD_WRAPPER_CLASSES} rounded-2xl overflow-hidden shadow-float`}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
             >
               <ActionPanelCard
@@ -376,7 +382,7 @@ const HeroSection = () => {
 
             {/* Result Window Card (Right) */}
             <motion.div
-              className="rounded-2xl overflow-hidden shadow-float"
+              className={`${RESULT_CARD_WRAPPER_CLASSES} rounded-2xl overflow-hidden shadow-float`}
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}

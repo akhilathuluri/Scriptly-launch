@@ -74,7 +74,7 @@ const TextSelectionDataCard = ({
 
   return (
     <motion.div
-      className="w-[280px] md:w-[320px] rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float"
+      className="w-full rounded-2xl p-3 md:p-4 text-left bg-gradient-to-b from-[#15162d] via-[#111426] to-[#0d1020] border border-white/10 shadow-float"
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
