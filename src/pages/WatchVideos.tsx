@@ -6,15 +6,18 @@ import SEO from "@/components/SEO";
 const videoSections = [
   {
     title: "Getting Started",
-    description: "Add your first YouTube embed here for onboarding and installation walkthroughs.",
+    description: "Everything you need to install, set up, and start using the product explained step by step.",
+    embedUrl: "../videos/How-Install-and-Setup.mp4",
   },
   {
-    title: "Core Features",
-    description: "Add feature demonstration videos showing rewrite, summarize, translate, and custom actions.",
+    title: "Create Custom Actions",
+    description: "Design powerful actions to automate workflows and extend what Spark can do.",
+    embedUrl: "../videos/How-to-create-custom-actions.mp4",
   },
   {
-    title: "Tips and Workflows",
-    description: "Add advanced workflow and productivity videos for power users.",
+    title: "Uninstall Guide",
+    description: "Follow this quick guide to completely uninstall the application from your device.",
+    embedUrl: "../videos/How-to-Uninstall.mp4",
   },
 ];
 
@@ -41,8 +44,7 @@ const WatchVideos = () => {
               Watch Spark Videos
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              This page is ready for your YouTube embeds. Add demos, tutorials, and walkthroughs
-              to help users learn Spark faster.
+              Watch step-by-step demos, tutorials, and walkthroughs to learn how to use Spark effectively.
             </p>
           </div>
 
@@ -58,13 +60,31 @@ const WatchVideos = () => {
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">{section.description}</p>
 
-                <div className="rounded-xl border border-dashed border-border/80 bg-background/70 p-8 flex flex-col items-center justify-center text-center min-h-[220px]">
-                  <Video className="w-8 h-8 text-primary/80 mb-3" />
-                  <p className="text-sm font-medium text-foreground">YouTube Embed Placeholder</p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    Replace this block with your embedded video iframe.
-                  </p>
-                </div>
+                {section.embedUrl ? (
+                  <div className="overflow-hidden rounded-xl border border-border/80 bg-background/70">
+                    <div className="relative aspect-video w-full">
+                      <video
+                        className="absolute inset-0 h-full w-full"
+                        src={section.embedUrl}
+                        controls
+                        muted
+                        loop
+                        autoPlay
+                        playsInline
+                      >
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="rounded-xl border border-dashed border-border/80 bg-background/70 p-8 flex flex-col items-center justify-center text-center min-h-[220px]">
+                    <Video className="w-8 h-8 text-primary/80 mb-3" />
+                    <p className="text-sm font-medium text-foreground">YouTube Embed Placeholder</p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Replace this block with your embedded video iframe.
+                    </p>
+                  </div>
+                )}
               </section>
             ))}
           </div>
