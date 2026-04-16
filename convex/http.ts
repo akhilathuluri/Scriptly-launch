@@ -1,6 +1,7 @@
 import { httpRouter } from "convex/server";
 import { httpAction } from "./_generated/server";
 import { api } from "./_generated/api";
+import { toAppTableApiResponse } from "./lib/appTableResponse";
 
 const http = httpRouter();
 
@@ -169,7 +170,7 @@ http.route({
   method: "GET",
   handler: httpAction(async (ctx) => {
     const table = await ctx.runQuery(api.app.getAppTableContent, {});
-    return json({ count: table.length, data: table });
+    return json(toAppTableApiResponse(table));
   }),
 });
 

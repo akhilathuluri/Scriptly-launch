@@ -12,6 +12,8 @@ import type * as app from "../app.js";
 import type * as developerNotifications from "../developerNotifications.js";
 import type * as http from "../http.js";
 import type * as issues from "../issues.js";
+import type * as lib_appDownloads from "../lib/appDownloads.js";
+import type * as lib_appTableResponse from "../lib/appTableResponse.js";
 
 import type {
   ApiFromModules,
@@ -24,6 +26,8 @@ declare const fullApi: ApiFromModules<{
   developerNotifications: typeof developerNotifications;
   http: typeof http;
   issues: typeof issues;
+  "lib/appDownloads": typeof lib_appDownloads;
+  "lib/appTableResponse": typeof lib_appTableResponse;
 }>;
 
 /**

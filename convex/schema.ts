@@ -8,6 +8,20 @@ export default defineSchema({
     latest_version: v.string(),
     minimum_version: v.string(),
     download_url: v.string(),
+    download_sha256: v.optional(v.string()),
+    download_url_win_x64: v.optional(v.string()),
+    sha256_win_x64: v.optional(v.string()),
+    download_url_win_arm64: v.optional(v.string()),
+    sha256_win_arm64: v.optional(v.string()),
+    downloads: v.optional(
+      v.record(
+        v.string(),
+        v.object({
+          url: v.string(),
+          sha256: v.string(),
+        })
+      )
+    ),
     release_notes: v.string(),
     created_at: v.number(),
     updated_at: v.number(),

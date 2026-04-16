@@ -1,5 +1,6 @@
-import { query } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
+import { normalizeAppDownloads } from "./lib/appDownloads";
 
 const compareSemver = (a: string, b: string): number => {
   const aParts = a.split(".").map((part) => Number.parseInt(part, 10) || 0);
@@ -91,6 +92,63 @@ export const verifyAppAccess = query({
       reason: "ok",
       message: "App verified successfully.",
       app: appRecord,
+    };
+  },
+});
+
+// Backfills optional download metadata fields for existing app rows.
+// Run this once from Convex Dashboard after deploying the widened schema.
+export const backfillAppDownloadFields = mutation({
+  args: {},
+  handler: async (ctx) => {
+    let scanned = 0;
+    let updated = 0;
+
+    for await (const row of ctx.db.query("app")) {
+      scanned += 1;
+
+      const normalized = normalizeAppDownloads({
+        download_url: row.download_url,
+        download_sha256: row.download_sha256,
+        download_url_win_x64: row.download_url_win_x64,
+        sha256_win_x64: row.sha256_win_x64,
+        download_url_win_arm64: row.download_url_win_arm64,
+        sha256_win_arm64: row.sha256_win_arm64,
+        downloads: row.downloads,
+      });
+
+      const needsUpdate =
+        row.download_sha256 !== normalized.download_sha256 ||
+        row.download_url_win_x64 !== normalized.download_url_win_x64 ||
+        row.sha256_win_x64 !== normalized.sha256_win_x64 ||
+        row.download_url_win_arm64 !== normalized.download_url_win_arm64 ||
+        row.sha256_win_arm64 !== normalized.sha256_win_arm64 ||
+        row.downloads?.["win-x64"]?.url !== normalized.downloads["win-x64"].url ||
+        row.downloads?.["win-x64"]?.sha256 !== normalized.downloads["win-x64"].sha256 ||
+        row.downloads?.["win-arm64"]?.url !== normalized.downloads["win-arm64"].url ||
+        row.downloads?.["win-arm64"]?.sha256 !== normalized.downloads["win-arm64"].sha256;
+
+      if (!needsUpdate) {
+        continue;
+      }
+
+      await ctx.db.patch(row._id, {
+        download_sha256: normalized.download_sha256,
+        download_url_win_x64: normalized.download_url_win_x64,
+        sha256_win_x64: normalized.sha256_win_x64,
+        download_url_win_arm64: normalized.download_url_win_arm64,
+        sha256_win_arm64: normalized.sha256_win_arm64,
+        downloads: normalized.downloads,
+        updated_at: Math.floor(Date.now() / 1000),
+      });
+
+      updated += 1;
+    }
+
+    return {
+      ok: true,
+      scanned,
+      updated,
     };
   },
 });
